@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Projects, Contact, About } from '../pages'
 import { Header, Hero, Footer } from '../components'
 

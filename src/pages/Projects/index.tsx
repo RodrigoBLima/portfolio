@@ -1,14 +1,13 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { GithubReposInterface } from "../../types/github";
-
-import defaultImage from "../../assets/default-image.png";
+import ProjectCard from "./Card";
 
 export default function Projects() {
-  const [projects, setProjects] = React.useState<GithubReposInterface[]>([]);
+  const [projects, setProjects] = useState<GithubReposInterface[]>([]);
 
   async function fetchUserGithub(ghUser: string) {
     const response = await fetch(
-      `https://api.github.com/users/${ghUser}/repos`
+      `https://api.github.com/users/${ghUser}/repos?per_page=7`
     );
 
     const data = await response.json();
@@ -16,44 +15,22 @@ export default function Projects() {
     setProjects(data)
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchUserGithub('RodrigoBLima')
   }, []);
 
   return (
-    <section className="bg-primary text-white px-5 py-32" id="projects">
-      <div className="container mx-auto grid md:grid-cols-2 items-center md:justify-between">
-        <div className="about-info mb-5">
-          <h2 className="text-4xl font-bold mb-5 border-b-[5px] w-[180px] border-[#464646] pb-2">
-            Projects
-          </h2>
-
-          <p className="pb-5">These are some of my best projects.</p>
-        </div>
-
-        <div className="about-img"></div>
+    <section className="bg-sky-100 text-black py-8 px-5 md:py-32" id="projects">
+      <div className="container mx-auto flex flex-col md:flex-row md:items-center justify-between">
+        <h2 className="text-4xl font-bold mb-5 border-b-[5px] border-sky-600 pb-2">
+          Projetos
+        </h2>
       </div>
 
-      <div className="projects container mx-auto max-h-72 grid md:grid-cols-3 gap-10 overflow-auto scrollbar-hide">
+      <div className="container mx-auto flex flex-wrap gap-4 overflow-auto scrollbar-hide">
         {(projects || []).map(
-          (project: GithubReposInterface, index: number) => (
-            <div className="relative" key={index}>
-              <img src={defaultImage} alt={project.name} />
-              <div className="flex absolute left-0 right-0 top-[13px] bottom-0 mx-auto w-[90%] h-[90%]  bg-primary  opacity-0 duration-500 justify-center flex-col hover:opacity-100 ">
-                <p className="py-5 text-center font-bold px-2 text-white">
-                  {project.description}
-                </p>
-
-                <div className="mx-auto">
-                  <a
-                    href={project.html_url}
-                    className="px-5 py-2 bg-blue-700 hover:bg-blue-800 font-bold"
-                  >
-                    Repository
-                  </a>
-                </div>
-              </div>
-            </div>
+          (project: GithubReposInterface,) => (
+            <ProjectCard key={project.name} {...project} />
           )
         )}
       </div>

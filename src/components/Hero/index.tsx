@@ -1,47 +1,25 @@
-import React from "react";
 import HeroImg from "../../assets/hero-img.png";
-
-import {
-  AiOutlineTwitter,
-} from "react-icons/ai";
 
 export default function Hero() {
   return (
-    <section className="bg-primary px-5 text-white py-32">
-      <div className="container mx-auto grid md:grid-cols-2 items-center justify-center md:justify-between">
-        <div className="hero-info pb-5 md:pb-0">
-          <h1 className="text-4xl lg:text-6xl">
-            Hi, <br />I am <span className="text-accent">R</span>odrigo <br />
-            Frontend Developer
+    <section className="bg-sky-100 text-black pt-20 py-8 px-5 md:py-32">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between">
+        <div className="pt-5 pb-5 md:pb-0">
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold leading-tight">
+            Olá, <br /> Eu sou <span className="text-accent">Rodrigo</span>.<br />
+            Desenvolvedor Frontend
           </h1>
 
           <p className="py-5">
-            I am proficient in JavaScript, Typescript, Jquery, Wordpress, React.js, Node JS and Sass
+            Tenho experiências em JavaScript, TypeScript, React.js, Next.js, Node.js, Redux, Jest, Cypress, Docker, AWS, and GitHub Actions.
           </p>
-
-          <div className="flex py-5 ">
-            <a
-              href="https://twitter.com/bitsssun"
-              className="pr-4 inline-block text-accent hover:text-white"
-            >
-              {" "}
-              <AiOutlineTwitter size={40} />{" "}
-            </a>
-          </div>
-
-          <a
-            href="/#projects"
-            className=" btn bg-accent  border-2 border-[#0D3895] text-white px-6 py-3 hover:bg-transparent"
-          >
-            See Projects
-          </a>
         </div>
 
-        <div className="hero-img">
+        <div className="flex justify-center md:justify-end">
           <img
             src={HeroImg}
-            alt="coding illustration"
-            className="lgw-[80%] ml-auto"
+            alt="Ilustração de um desenvolvedor programando"
+            className="w-[80%] max-w-lg rounded-lg"
           />
         </div>
       </div>

@@ -1,34 +1,42 @@
-import React from 'react'
 import AboutImg from "../../assets/about-img.webp";
+
+const aboutParagraphs = [
+  "Olá, meu nome é Rodrigo Barbosa Lima, mas todos me chamam de Barbosa. Sou um Desenvolvedor Frontend apaixonado por criar interfaces modernas, acessíveis e otimizadas para a melhor experiência do usuário.",
+  "Tenho experiência sólida com React.js, incluindo hooks customizados, gerenciamento de estado com Redux e Context API, otimização de performance (LCP, CLS, lazy loading, memorização), além de técnicas avançadas como Server-Side Rendering (SSR) e Static Site Generation (SSG).",
+  "No backend, trabalho com NestJS e Django Rest Framework para construção de APIs escaláveis e performáticas. Também tenho experiência com integração de APIs RESTful e práticas de segurança.",
+  "Automatizo processos utilizando GitHub Actions, GitLab CI/CD e Jenkins, além de implementar fluxos de deploy contínuos e seguros, garantindo entregas ágeis, escaláveis e de alta confiabilidade.",
+  "Tenho expertise em testes automatizados com Jest, Cypress e TDD, garantindo qualidade e confiabilidade no código. Também monitoro aplicações com DataDog, Dynatrace e Lighthouse para otimização contínua.",
+  "Estou sempre estudando e aprimorando meus conhecimentos em testes automatizados, Kubernetes, comunicação e liderança.",
+];
 
 export default function About() {
   return (
-    <section className="bg-secondary text-white px-5 py-32" id="about">
+    <section className="bg-secondary text-black py-8 px-5 md:py-32" aria-labelledby="about-heading"
+      id="about">
       <div className="container mx-auto grid md:grid-cols-2 items-center justify-center md:justify-between">
-        <div className="about-info">
-          <h2 className="text-4xl font-bold mb-5 border-b-[5px] w-[180px] border-[#3e8bef] pb-2">
-            About Me
+        <div>
+          <h2 id="about-heading"
+            className="w-full text-4xl font-bold mb-5 border-b-[5px] border-sky-600 pb-2">
+            Sobre Mim
           </h2>
 
-          <p className="pb-5">
-            Hi, My Name Is Rodrigo Barbosa Lima everyone calls me Barbosa. I am a
-            Frontend Developer. I build beautiful websites with Javascript, Typescript, Jquery, Css and more.
-          </p>
-          <p className="pb-5">
-            I am proficient in Frontend skills like React.js, Redux, Redux Tool
-            Kit, Axios, Tailwind CSS, SaSS, Css3 and many more.
-          </p>
-
-          <p>In backend I know Nest.js, Node.js, Express.js, Prisma ORM</p>
+          {aboutParagraphs.map((text, index) => (
+            <p key={index} className="pb-5 text-justify">
+              {text}
+            </p>
+          ))}
         </div>
 
-        <div className="about-img">
+        <figure>
           <img
             src={AboutImg}
-            alt="coding illustration"
+            alt="Ilustração de programação"
             className="lgw-[80%] md:ml-auto"
           />
-        </div>
+          <figcaption className="sr-only">
+            Ilustração representando programação
+          </figcaption>
+        </figure>
       </div>
     </section>
   )

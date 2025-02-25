@@ -1,25 +1,61 @@
+# Portfólio Pessoal
 
-# Personal portfolio 
+Bem-vindo ao meu portfólio pessoal! Aqui você encontrará meus projetos, experiências e habilidades no desenvolvimento web.
 
-A basic project to show my portfolio of applications and tech skills
+## Sobre o Projeto
 
+Este projeto é um espaço para compartilhar meus trabalhos e experiências como Desenvolvedor Frontend. Nele, você poderá explorar:
+- **Projetos:** Demonstração de aplicações desenvolvidas com tecnologias modernas.
+- **Sobre Mim:** Informações sobre minha trajetória, habilidades e valores.
+- **Contato:** Formas de entrar em contato para parcerias e oportunidades profissionais.
 
-## Stack used
+## Tecnologias Utilizadas
 
-**Front-end:** React, TailwindCSS, Sass
+**Front-end:**
+- React
+- TailwindCSS
+- Sass
 
+## Funcionalidades
 
-## Demo
+- **Design Responsivo:** Interface que se adapta a diferentes tamanhos de tela.
+- **Acessibilidade:** Práticas que garantem melhor usabilidade para todos os usuários.
+- **Interatividade:** Seções dinâmicas que facilitam a navegação pelo portfólio.
 
-https://app.usebubbles.com/eA65vzaYStaCfXU9qAD9mZ/portfolio-usage
+## Como Executar o Projeto
 
+Para rodar este projeto localmente, siga os passos abaixo:
 
-## Author
+1. **Clone o repositório:**
 
-- [@BarbosaDEV](https://www.github.com/RodrigoBLima)
+  ```bash
+    git clone https://github.com/RodrigoBLima/portfolio.git
+  ```
 
+2. **Instale as dependencias:**
 
+  ```bash
+    npm install
+    # ou
+    yarn install 
+  ```
+
+3. **Inicie a aplicação:**
+
+  ```bash
+    npm start
+    # ou
+    yarn start 
+  ```
+
+3. **Acesse:**
+
+  Abra o navegador e acesse http://localhost:3000.
+  
 ## Licença
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
+## Author
+
+- [@RodrigoBLima](https://www.github.com/RodrigoBLima)

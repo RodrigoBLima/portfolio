@@ -4,9 +4,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="py-4 text-center bg-primary text-white">
+    <div className="py-4 text-center bg-sky-100 text-black">
       {" "}
-      &copy; {currentYear} all right reserved
+      &copy; {currentYear} Todos direitos reservados
     </div>
   );
 }
